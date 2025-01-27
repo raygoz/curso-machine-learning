@@ -34,9 +34,16 @@ linear_model.compile(optimizer=tf.keras.optimizers.SGD(), loss=tf.keras.losses.m
 #linear_model.compile(optimizer=tf.keras.optimizers.SGD(), loss=tf.keras.losses.MeanSquaredError)
 
 print(linear_model.summary())
+w,b = linear_model.weights
+print('before')
+print(w)
+print(b)
 
 linear_model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=20)
-
+w,b = linear_model.weights
+print('after')
+print(w)
+print(b)
 #print(linear_model.predict([ [0.0], [2.0], [3.1], [4.2], [5.2] ] ).tolist() )   
 print(linear_model.predict(tf.constant([ [100.0], [200.0], [300.0], [400.0], [1000.0] ] ) ))   
 
