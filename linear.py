@@ -12,7 +12,7 @@ print(tf.__version__)
 X = np.arange(-10.0, 10.0, 1e-2)
 print(X)
 np.random.shuffle(X)
-y =  10.0 * X + 0.0
+y =  2.0 * X + 1.0
 print(y)
 
 train_end = int(0.6 * len(X))
@@ -38,7 +38,7 @@ print(linear_model.summary())
 linear_model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=20)
 
 #print(linear_model.predict([ [0.0], [2.0], [3.1], [4.2], [5.2] ] ).tolist() )   
-print(linear_model.predict(tf.constant([ [0.0], [2.0], [3.1], [4.2], [5.2] ] ) ))   
+print(linear_model.predict(tf.constant([ [0.0], [1.0], [3.0], [4.0], [5.0] ] ) ))   
 
 export_path = 'linear-model/1/'
 tf.saved_model.save(linear_model, os.path.join('./',export_path))
