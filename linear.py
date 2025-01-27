@@ -10,7 +10,7 @@ import tensorflow as tf
 print(tf.__version__)
 
 X = np.arange(-10.0, 10.0, 1e-2)
-print(x)
+print(X)
 np.random.shuffle(X)
 y =  10.0 * X + 0.0
 print(y)
